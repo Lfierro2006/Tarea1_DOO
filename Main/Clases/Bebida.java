@@ -1,3 +1,4 @@
+package Clases;
 abstract class Bebida{
     private int serie;
     public Bebida(int serie){
