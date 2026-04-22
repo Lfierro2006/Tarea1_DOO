@@ -1,3 +1,6 @@
+package Clases;
+import java.util.ArrayList;
+
 class Deposito{
     private ArrayList<Bebida> al;
     private ArrayList<Moneda> mon;
