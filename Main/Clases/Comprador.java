@@ -1,3 +1,4 @@
+package Clases;
 class Comprador{
     private String sonido;
     private int vuelto;
