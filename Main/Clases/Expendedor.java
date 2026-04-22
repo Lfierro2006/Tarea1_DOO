@@ -1,3 +1,4 @@
+package Clases;
 class Expendedor{
     private int precio;
     private Deposito coca;
