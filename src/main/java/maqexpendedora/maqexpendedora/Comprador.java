@@ -1,6 +1,7 @@
 package maqexpendedora;
 import maqexpendedora.moneda.Moneda;
 import bebida.Bebida;
+
 class Comprador{
     private String sonido;
     private int vuelto;
