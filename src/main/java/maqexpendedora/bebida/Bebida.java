@@ -1,3 +1,4 @@
+package maqexpendedora;
 abstract class Bebida{
     private int serie;
 
