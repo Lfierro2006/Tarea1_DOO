@@ -1,3 +1,6 @@
+package maqexpendedora;
+import maqexpendedora.moneda.Moneda;
+import bebida.Bebida;
 class Comprador{
     private String sonido;
     private int vuelto;
@@ -12,7 +15,6 @@ class Comprador{
 
         this.vuelto=0;
         Moneda monedavuelto = exp.getVuelto();
-
         while(monedavuelto != null){
             this.vuelto=this.vuelto+ monedavuelto.getValor();
             monedavuelto= exp.getVuelto();

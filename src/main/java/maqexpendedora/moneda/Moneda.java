@@ -1,4 +1,5 @@
-abstract class Moneda{
+package moneda;
+public abstract class Moneda{
 
 
     public Moneda(){

@@ -1,3 +1,4 @@
+package bebida;
 class Sprite extends Bebida {
     public Sprite(int serie) {
         super(serie);

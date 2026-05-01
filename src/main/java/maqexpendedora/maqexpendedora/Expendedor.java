@@ -1,3 +1,4 @@
+package maqexpendedora;
 class Expendedor{
     private Deposito coca;
     private Deposito sprite;

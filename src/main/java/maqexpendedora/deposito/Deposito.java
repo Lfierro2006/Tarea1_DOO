@@ -1,4 +1,5 @@
-class Deposito{
+package deposito;
+public class Deposito{
     private ArrayList<Bebida> lista;
     public Deposito(){
         this.lista= new ArrayList<Bebida>();
