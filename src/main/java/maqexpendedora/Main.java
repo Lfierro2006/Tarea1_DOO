@@ -1,3 +1,7 @@
+import maqexpendedora.Comprador;
+import moneda.Moneda;
+import moneda.Moneda1000;
+import maqexpendedora.Expendedor;
 public class Main {
     public static void main(String[] args) {
         Expendedor maquina = new Expendedor(5, 300);

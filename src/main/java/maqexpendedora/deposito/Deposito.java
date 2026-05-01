@@ -1,5 +1,7 @@
 package deposito;
 
+import java.util.ArrayList;
+
 public class Deposito<T>{ // clase generica
     private ArrayList<T> lista; //se define para que solo maneje del tipo T
     public Deposito(){

@@ -1,8 +1,10 @@
 package maqexpendedora;
-import maqexpendedora.moneda.Moneda;
-import bebida.Bebida;
 
-class Comprador{
+import moneda.Moneda;
+import producto.Bebida;
+
+
+public class Comprador{
     private String sonido;
     private int vuelto;
     public Comprador(Moneda m, int cualBebida, Expendedor exp){

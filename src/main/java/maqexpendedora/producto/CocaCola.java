@@ -1,5 +1,8 @@
-package bebida;
-class CocaCola extends Bebida {
+package producto;
+
+
+
+public class CocaCola extends Bebida {
     public CocaCola(int serie) {
         super(serie);
     }

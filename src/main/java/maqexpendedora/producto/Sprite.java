@@ -1,5 +1,5 @@
-package bebida;
-class Sprite extends Bebida {
+package producto;
+public class Sprite extends Bebida {
     public Sprite(int serie) {
         super(serie);
     }
@@ -7,5 +7,6 @@ class Sprite extends Bebida {
     public String beber() {
         return "sprite";
     }
+
 }
 

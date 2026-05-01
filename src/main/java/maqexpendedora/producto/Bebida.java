@@ -1,4 +1,4 @@
-package bebida;
+package producto;
 public abstract class Bebida{
     private int serie;
 
