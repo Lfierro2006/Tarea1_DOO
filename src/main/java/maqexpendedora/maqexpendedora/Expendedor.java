@@ -41,9 +41,12 @@ public class Expendedor{
         this.super8= new Deposito<Producto>();
         this.monVuelto= new Deposito<Moneda>();
         for (int i=0; i<numbebidas;i++){
-            coca.addObjeto(new CocaCola(100+i));
-            sprite.addObjeto(new Sprite(200+i));
-            fanta.addObjeto(new Fanta((300+i)));
+            snicker.addObjeto(new Fanta(100+i));
+            chokita.addObjeto(new Fanta(200+i));
+            super8.addObjeto(new Fanta(300+i));
+            coca.addObjeto(new CocaCola(400+i));
+            fanta.addObjeto(new Fanta(500+i));
+            sprite.addObjeto(new Sprite(600+i));
         }
     }
 
