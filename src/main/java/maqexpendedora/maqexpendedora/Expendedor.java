@@ -12,7 +12,7 @@ public class Expendedor{
     private Deposito<Producto> chokita;
     private Deposito<Producto> super8;
     private Deposito<Moneda> monVuelto;
-    enum nomProduct{
+    protected enum nomProduct{
         SNICKER(1,500),
         CHOKITA(2,400),
         SUPER8(3,500),
