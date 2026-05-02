@@ -1,6 +1,6 @@
 package producto;
 
-abstract class Chokita extends Dulce {
+public class Chokita extends Dulce {
     public Chokita(int serie) {
         super(serie);
     }

@@ -4,12 +4,12 @@ import moneda.Moneda1000;
 import maqexpendedora.Expendedor;
 public class Main {
     public static void main(String[] args) {
-        Expendedor maquina = new Expendedor(5, 300);
+        Expendedor maquina = new Expendedor(99);
         Moneda moneda = new Moneda1000();
-        Comprador Juan = new Comprador(moneda, 1, maquina);
+        Comprador Juan = new Comprador(moneda, Expendedor.nomProduct.CHOKITA, maquina);
 
 
-        System.out.println(Juan.queBebiste());
+        System.out.println(Juan.queConsumiste());
         System.out.println(Juan.cuantoVuelto());
     }
 }
