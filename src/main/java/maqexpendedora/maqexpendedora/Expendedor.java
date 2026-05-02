@@ -5,13 +5,13 @@ import moneda.*;
 import producto.*;
 
 public class Expendedor{
-    private Deposito<Producto> coca;
-    private Deposito<Producto> sprite;
-    private Deposito<Producto> fanta;
-    private Deposito<Producto> snicker;
-    private Deposito<Producto> chokita;
-    private Deposito<Producto> super8;
-    private Deposito<Moneda> monVuelto;
+    private final Deposito<Producto> coca;
+    private final Deposito<Producto> sprite;
+    private final Deposito<Producto> fanta;
+    private final Deposito<Producto> snicker;
+    private final Deposito<Producto> chokita;
+    private final Deposito<Producto> super8;
+    private final Deposito<Moneda> monVuelto;
     protected enum nomProduct{
         SNICKER(1,500),
         CHOKITA(2,400),
