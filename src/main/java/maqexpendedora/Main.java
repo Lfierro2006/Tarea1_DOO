@@ -1,6 +1,17 @@
 import maqexpendedora.*;
 import moneda.*;
+import excepciones.*;
+
+/**
+ * Clase principal que prueba todas las funcionalidades de la máquina expendedora.
+ * Incluye casos normales de compra y pruebas de excepciones.
+ */
 public class Main {
+
+    /**
+     * Metodo principal que ejecuta las pruebas de la máquina expendedora.
+     * @param args Argumentos de línea de comandos (no se utilizan)
+     */
     public static void main(String[] args) {
         // Crear expendedora con stock inicial de 2 productos por tipo
         Expendedor exp = new Expendedor(2);
