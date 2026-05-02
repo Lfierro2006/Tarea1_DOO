@@ -13,23 +13,18 @@ public class Expendedor{
     private final Deposito<Producto> super8;
     private final Deposito<Moneda> monVuelto;
     public enum nomProduct{
-        SNICKER(1,500),
-        CHOKITA(2,400),
-        SUPER8(3,500),
-        COCACOLA(4,1300),
-        FANTA(5,1000),
-        SPRITE(6,800);
+        SNICKER(500),
+        CHOKITA(400),
+        SUPER8(500),
+        COCACOLA(1300),
+        FANTA(1000),
+        SPRITE(800);
         private final int precio;
-        private final int tipo;
-        nomProduct(int tipo,int precio) {
+        nomProduct(int precio) {
         this.precio=precio;
-        this.tipo=tipo;
         }
         public int getPrecio(){
             return precio;
-        }
-        public int getTipo(){
-            return tipo;
         }
     }
     public Expendedor(int numProductos){
