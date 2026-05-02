@@ -3,14 +3,14 @@ package maqexpendedora;
 import moneda.*;
 import producto.*;
 public class Comprador{
-    private String sonido;
+    private final String sabor;
     private int vuelto;
     public Comprador(Moneda m, Expendedor.nomProduct product, Expendedor exp){
         Producto p= exp.comprarProducto(m,product);
         if(p != null){
-            this.sonido=p.consumir();
+            this.sabor=p.consumir();
         } else {
-            this.sonido=null;
+            this.sabor=null;
         }
         this.vuelto=0;
         Moneda monedavuelto = exp.getVuelto();
@@ -23,7 +23,7 @@ public class Comprador{
         return this.vuelto;
     }
     public String queConsumiste(){
-        return  this.sonido;
+        return  this.sabor;
     }
 }
 
