@@ -23,9 +23,22 @@ public class Expendedor{
         private final int tipo;
         nomProduct(int tipo,int precio) {
         this.precio=precio;
-        this.coca= new Deposito<Bebida>();
-        this.sprite= new Deposito<Bebida>();
-        this.fanta= new Deposito<Bebida>();
+        this.tipo=tipo;
+        }
+        private int getPrecio(){
+            return precio;
+        }
+        private int getTipo(){
+            return tipo;
+        }
+    }
+    public Expendedor(int numbebidas){
+        this.coca= new Deposito<Producto>();
+        this.fanta= new Deposito<Producto>();
+        this.sprite= new Deposito<Producto>();
+        this.snicker= new Deposito<Producto>();
+        this.chokita= new Deposito<Producto>();
+        this.super8= new Deposito<Producto>();
         this.monVuelto= new Deposito<Moneda>();
         for (int i=0; i<numbebidas;i++){
             coca.addObjeto(new CocaCola(100+i));
