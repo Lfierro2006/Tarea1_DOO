@@ -5,9 +5,12 @@ import moneda.*;
 import producto.*;
 
 public class Expendedor{
-    private Deposito<Bebida> coca;
-    private Deposito<Bebida> sprite;
-    private Deposito<Bebida> fanta;
+    private Deposito<Producto> coca;
+    private Deposito<Producto> sprite;
+    private Deposito<Producto> fanta;
+    private Deposito<Producto> snicker;
+    private Deposito<Producto> chokita;
+    private Deposito<Producto> super8;
     private Deposito<Moneda> monVuelto;
     private int precio;
     public static final int COCA =1;
