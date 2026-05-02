@@ -12,11 +12,16 @@ public class Expendedor{
     private Deposito<Producto> chokita;
     private Deposito<Producto> super8;
     private Deposito<Moneda> monVuelto;
-    private int precio;
-    public static final int COCA =1;
-    public static final int SPRITE = 2;
-    public static final int FANTA = 3;
-    public Expendedor(int numbebidas, int precio){
+    enum nomProduct{
+        SNICKER(1,500),
+        CHOKITA(2,450),
+        SUPER8(3,500),
+        COCACOLA(4,1300),
+        FANTA(5,1000),
+        SPRITE(6,1000);
+        private final int precio;
+        private final int tipo;
+        nomProduct(int tipo,int precio) {
         this.precio=precio;
         this.coca= new Deposito<Bebida>();
         this.sprite= new Deposito<Bebida>();
