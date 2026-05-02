@@ -1,16 +1,21 @@
 package maqexpendedora;
 
-import moneda.Moneda;
-import producto.Bebida;
+import moneda.*;
+import producto.*;
 
+import static maqexpendedora.Comprador.CualProducto.FANTA;
+import static maqexpendedora.Comprador.TipoProducto.*;
 
 public class Comprador{
     private String sonido;
     private int vuelto;
-    public Comprador(Moneda m, int cualBebida, Expendedor exp){
-        Bebida b= exp.comprarBebida(m, cualBebida);
+    enum TipoProducto{ BEBIDA, DULCE}
+    enum CualProducto{ SNICKER, SUPER8, TERCERDULCE, COCACOLA, FANTA, SPRITE}
+    public Comprador(Moneda m, TipoProducto tipoProducto,CualProducto cualProducto ,Expendedor exp){
+        switch (tipoProducto){
 
-        if(b != null){
+        }
+        if(p != null){
             this.sonido=b.beber();
         } else {
             this.sonido=null;

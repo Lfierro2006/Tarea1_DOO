@@ -1,13 +1,8 @@
 package maqexpendedora;
 
 import deposito.Deposito;
-import moneda.Moneda;
-import moneda.Moneda100;
-import producto.Bebida;
-import producto.CocaCola;
-import producto.Sprite;
-import producto.Fanta;
-
+import moneda.*;
+import producto.*;
 
 public class Expendedor{
     private Deposito<Bebida> coca;
