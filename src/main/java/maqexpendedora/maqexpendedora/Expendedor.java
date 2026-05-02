@@ -25,10 +25,10 @@ public class Expendedor{
         this.precio=precio;
         this.tipo=tipo;
         }
-        private int getPrecio(){
+        public int getPrecio(){
             return precio;
         }
-        private int getTipo(){
+        public int getTipo(){
             return tipo;
         }
     }
