@@ -30,22 +30,19 @@ public class Main {
         Comprador c4 = new Comprador(null, Expendedor.nomProduct.SPRITE, exp);
         System.out.println("Queria comprar:"+ Expendedor.nomProduct.SPRITE+" | Valor:"+Expendedor.nomProduct.SPRITE.getPrecio()+"| Moneda:null | vuelto: " + c4.cuantoVuelto()+" | Resultado: " + c4.queConsumiste());
 
-        System.out.println(Juan.queConsumiste());
-        System.out.println(Juan.cuantoVuelto());
-        System.out.println();
-        System.out.println(J.queConsumiste());
-        System.out.println(J.cuantoVuelto());
-        System.out.println();
-        System.out.println(Jjj.queConsumiste());
-        System.out.println(Jjj.cuantoVuelto());
-        System.out.println();
-        System.out.println(Jjjj.queConsumiste());
-        System.out.println(Jjjj.cuantoVuelto());
-        System.out.println();
-        System.out.println(Jjjjj.queConsumiste());
-        System.out.println(Jjjjj.cuantoVuelto());
-        System.out.println();
-        System.out.println(Jjjjjj.queConsumiste());
-        System.out.println(Jjjjjj.cuantoVuelto());
+        // 2. Pago insuficiente (Moneda100 para producto de 1300)
+        System.out.println("\n--- Caso 2: Pago insuficiente ---");
+        Comprador c5 = new Comprador(new Moneda100(), Expendedor.nomProduct.COCACOLA, exp);
+        System.out.println("Quería comprar: "+Expendedor.nomProduct.COCACOLA+" | Valor:"+Expendedor.nomProduct.COCACOLA.getPrecio() + " | Moneda:100 | vuelto: " + c5.cuantoVuelto()+" | Resultado: " + c5.queConsumiste());
+
+        // 3. Sin stock (vendemos los 2 Super8 que hay)
+        System.out.println("\n--- Prueba 3: Sin stock ---");
+        System.out.println("Stock inicial de Super8: 2 unidades");
+        Comprador c6 = new Comprador(new Moneda1000(), Expendedor.nomProduct.SUPER8, exp);
+        Comprador c7 = new Comprador(new Moneda1000(), Expendedor.nomProduct.SUPER8, exp);
+        Comprador c8 = new Comprador(new Moneda1000(), Expendedor.nomProduct.SUPER8, exp);
+        System.out.println("Primer Super8: " + c6.queConsumiste());
+        System.out.println("Segundo Super8: " + c7.queConsumiste());
+        System.out.println("Tercer Super8 (falla): " + c8.queConsumiste());
     }
 }
