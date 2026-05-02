@@ -18,6 +18,7 @@ public class Main {
         Comprador Jjjj = new Comprador(new Moneda1500(), Expendedor.nomProduct.COCACOLA, maquina);
         Comprador Jjjjj = new Comprador(new Moneda500(), Expendedor.nomProduct.FANTA, maquina);
         Comprador Jjjjjj = new Comprador(new Moneda1000(), Expendedor.nomProduct.SPRITE, maquina);
+
         System.out.println(Juan.queConsumiste());
         System.out.println(Juan.cuantoVuelto());
         System.out.println();
