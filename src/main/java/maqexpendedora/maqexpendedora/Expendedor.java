@@ -3,7 +3,12 @@ package maqexpendedora;
 import deposito.Deposito;
 import moneda.*;
 import producto.*;
+import excepciones.*;
 
+/**
+ * Clase que representa la maquina expendedora con la que interactua el comprador
+ * Almacena productos, verifica las comprar y el vuelto
+ */
 public class Expendedor{
     private final Deposito<Producto> coca;
     private final Deposito<Producto> sprite;
@@ -12,6 +17,10 @@ public class Expendedor{
     private final Deposito<Producto> chokita;
     private final Deposito<Producto> super8;
     private final Deposito<Moneda> monVuelto;
+
+    /**
+     * Enumeracion que representa los productos y el costo de cada uno
+     */
     public enum nomProduct{
         SNICKER(500),
         CHOKITA(400),
@@ -20,13 +29,29 @@ public class Expendedor{
         FANTA(1000),
         SPRITE(800);
         private final int precio;
+
+        /**
+         * constructor del enumProduct
+         * @param precio numero entero, valor especifico del producto
+         */
         nomProduct(int precio) {
         this.precio=precio;
         }
+
+        /**
+         * obtener el precio del producto
+         * @return Numero entero, valor del precio del producto
+         */
         public int getPrecio(){
             return precio;
         }
     }
+
+    /**
+     * Constructor de la clase Expendedor
+     * inicializa cada deposito y los llena con la cantidad indicada
+     * @param numProductos La cantidad de stock inicial que tendra cada uno de los productos
+     */
     public Expendedor(int numProductos){
         this.coca= new Deposito<Producto>();
         this.fanta= new Deposito<Producto>();
@@ -45,10 +70,23 @@ public class Expendedor{
         }
     }
 
-    public Producto comprarProducto(Moneda a,nomProduct product){
-        //ACÁ VA UNA EXCEPCIÓN!!!!11!111!
-        //PagoIncorrectoException
-        if(a==null)return null;
+    /**
+     * Ejecuta la compra del producto, con la moneda y el producto especificado
+     * verifica que sea valido, que haya stock, el pago sea suficiente y que el producto solicitado exista
+     * si la compra es exitosa, se da el vuelto
+     * @param a La moneda que se ingresa a la maquina para pagar
+     * @param product El producto que se desea comprar
+     * @return el producto extraido del expendedor
+     * @throws PagoIncorrectoException   Si la moneda ingresada es null.
+     * @throws PagoInsuficienteException Si el valor de la moneda es menor al precio del producto.
+     * @throws NoHayProductoException    Si no queda stock del producto solicitado en el depósito.
+     */
+
+    public Producto comprarProducto(Moneda a,nomProduct product)
+            throws PagoIncorrectoException, PagoInsuficienteException, NoHayProductoException{
+        if(a==null){
+            throw new PagoIncorrectoException("Error: Moneda nula o no ingresada.");
+        }
         Producto p = null;
 
         if(a.getValor() >= product.getPrecio()){
@@ -69,20 +107,22 @@ public class Expendedor{
                 }
                 return p;
             }
-            //ACÁ VA UN EXCEPTION
-            // NoHayProductoException
             else { //en caso de tipo de bebida pedido inexistente o fuera de stock se devuelve la moneda
+
                 monVuelto.addObjeto(a);
-                return null;
+                throw new NoHayProductoException("Error: No queda stock de " + product.name());
             }
         }
-        //ACÁ VA UN EXCEPTION!!!
-        //PagoInsuficienteException
         else{ // en caso de que no alcanza la plata tambien se devuelve la moneda
             monVuelto.addObjeto(a);
-            return null;
+            throw new PagoInsuficienteException("Error: Dinero insuficiente para comprar " + product.name());
         }
     }
+
+    /**
+     * saca moneda del deposito del vuelto
+     * @return moneda de 100 correspondiente al vuelto
+     */
     public Moneda getVuelto(){
         return monVuelto.getObjeto();
     }

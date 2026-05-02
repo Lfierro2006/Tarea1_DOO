@@ -1,6 +1,15 @@
 import maqexpendedora.*;
 import moneda.*;
+
+/**
+ * Clase principal del proyecto, donde se probara el funcionamiento de la maquina,
+ * y las compras en diferentes escenarios
+ */
 public class Main {
+    /**
+     * Metodo principal del programa de pruebas
+     * @param args Argumento linea de comandos(no usados en el programa).
+     */
     public static void main(String[] args) {
         Expendedor maquina = new Expendedor(99);
         Comprador Juan = new Comprador(new Moneda1000(), Expendedor.nomProduct.SNICKER, maquina);
