@@ -2,5 +2,5 @@
 
 Integrantes:
   -Lucas Benjamín Fierro Orellana
-  -JAvier Sebastián Alonso Molina Díaz
+  -Javier Sebastián Alonso Molina Díaz
   -Joaquín Andrés Torres Zavala
