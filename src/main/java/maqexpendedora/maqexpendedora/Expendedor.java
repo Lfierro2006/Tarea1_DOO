@@ -12,7 +12,7 @@ public class Expendedor{
     private final Deposito<Producto> chokita;
     private final Deposito<Producto> super8;
     private final Deposito<Moneda> monVuelto;
-    protected enum nomProduct{
+    public enum nomProduct{
         SNICKER(1,500),
         CHOKITA(2,400),
         SUPER8(3,500),
@@ -57,7 +57,7 @@ public class Expendedor{
         Producto p = null;
 
         if(a.getValor() >= product.getPrecio()){
-            switch (product.tipo){
+            switch (product){
                 case SNICKER: p=snicker.getObjeto();break;
                 case CHOKITA:p=chokita.getObjeto();break;
                 case SUPER8:p=super8.getObjeto();break;
