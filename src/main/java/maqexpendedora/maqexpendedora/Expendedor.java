@@ -32,7 +32,7 @@ public class Expendedor{
             return tipo;
         }
     }
-    public Expendedor(int numbebidas){
+    public Expendedor(int numProductos){
         this.coca= new Deposito<Producto>();
         this.fanta= new Deposito<Producto>();
         this.sprite= new Deposito<Producto>();
@@ -40,7 +40,7 @@ public class Expendedor{
         this.chokita= new Deposito<Producto>();
         this.super8= new Deposito<Producto>();
         this.monVuelto= new Deposito<Moneda>();
-        for (int i=0; i<numbebidas;i++){
+        for (int i=0; i<numProductos;i++){
             snicker.addObjeto(new Fanta(100+i));
             chokita.addObjeto(new Fanta(200+i));
             super8.addObjeto(new Fanta(300+i));
