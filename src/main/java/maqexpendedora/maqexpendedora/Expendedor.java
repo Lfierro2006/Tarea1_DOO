@@ -14,7 +14,7 @@ public class Expendedor{
     private Deposito<Moneda> monVuelto;
     enum nomProduct{
         SNICKER(1,500),
-        CHOKITA(2,450),
+        CHOKITA(2,400),
         SUPER8(3,500),
         COCACOLA(4,1300),
         FANTA(5,1000),
@@ -50,33 +50,39 @@ public class Expendedor{
         }
     }
 
-    public Bebida comprarBebida(Moneda a, int tipo){
+    public Producto comprarProducto(Moneda a,nomProduct product){
+        //ACÁ VA UNA EXCEPCIÓN!!!!11!111!
+        //PagoIncorrectoException
         if(a==null)return null;
-        Bebida b = null;
+        Producto p = null;
 
-        if(a.getValor() >= this.precio){
-            if (tipo==COCA){
-                b= coca.getObjeto();
-            } else if (tipo==SPRITE) {
-                b= sprite.getObjeto();
-            } else if (tipo==FANTA) {
-                b=fanta.getObjeto();
+        if(a.getValor() >= product.precio){
+            switch (product){
+                case SNICKER: p=snicker.getObjeto();break;
+                case CHOKITA:p=chokita.getObjeto();break;
+                case SUPER8:p=super8.getObjeto();break;
+                case COCACOLA:p=coca.getObjeto();break;
+                case FANTA:p=fanta.getObjeto();break;
+                case SPRITE:p=sprite.getObjeto();break;
             }
-
-            if (b !=null){ //calcular vuelto a devolver
-                int vuelto = a.getValor() - precio;
+            if (p !=null){ //calcular vuelto a devolver
+                int vuelto = a.getValor() - product.precio;
                 int cantMonedas100 = vuelto/100;//cantidad de monedas
 
                 for (int i = 0; i < cantMonedas100; i++) {//se genera la cantidad de monedas y se meten al deposito
                     monVuelto.addObjeto(new Moneda100()); // se crea para el vuelto
                 }
-                return b;
+                return p;
             }
+            //ACÁ VA UN EXCEPTION
+            // NoHayProductoException
             else { //en caso de tipo de bebida pedido inexistente o fuera de stock se devuelve la moneda
                 monVuelto.addObjeto(a);
                 return null;
             }
         }
+        //ACÁ VA UN EXCEPTION!!!
+        //PagoInsuficienteException
         else{ // en caso de que no alcanza la plata tambien se devuelve la moneda
             monVuelto.addObjeto(a);
             return null;
