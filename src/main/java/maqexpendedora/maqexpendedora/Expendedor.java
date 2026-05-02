@@ -56,8 +56,8 @@ public class Expendedor{
         if(a==null)return null;
         Producto p = null;
 
-        if(a.getValor() >= product.precio){
-            switch (product){
+        if(a.getValor() >= product.getPrecio()){
+            switch (product.tipo){
                 case SNICKER: p=snicker.getObjeto();break;
                 case CHOKITA:p=chokita.getObjeto();break;
                 case SUPER8:p=super8.getObjeto();break;
