@@ -1,7 +1,9 @@
 package producto;
-public abstract class Dulce{
-    private int serie;
-    public Dulce(int serie){
-        this.serie=serie;
+abstract class Dulce extends Producto {
+
+        public Dulce(int serie) {
+            super(serie);
+        }
     }
-}
+
+
